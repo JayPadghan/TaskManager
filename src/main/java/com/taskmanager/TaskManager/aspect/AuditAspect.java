@@ -18,13 +18,13 @@ import java.time.LocalDateTime;
 public class AuditAspect {
     private final AuditLogRepository auditLogRepository;
 
-    @Pointcut("execution(* org.abhineshjha.taskmanager.service.TaskService.createTask(..))")
+    @Pointcut("execution(* com.taskmanager.TaskManager.service.TaskService.createTask(..))")
     public void createTask(){}
 
-    @Pointcut("execution(* org.abhineshjha.taskmanager.service.TaskService.updateTask(..))")
+    @Pointcut("execution(* com.taskmanager.TaskManager.service.TaskService.updateTask(..))")
     public void updateTask(){}
 
-    @Pointcut("execution(* org.abhineshjha.taskmanager.service.TaskService.deleteTask(..))")
+    @Pointcut("execution(* com.taskmanager.TaskManager.service.TaskService.deleteTask(..))")
     public void deleteTask(){}
 
     @AfterReturning(pointcut = "createTask()", returning = "result")
